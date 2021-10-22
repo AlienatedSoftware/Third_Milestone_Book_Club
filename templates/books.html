@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Keep track of your bookshelf</h2>
-
     {% for book in books %}
         {{ book.book_name }}<br>
         {{ book.category_name }}<br>
