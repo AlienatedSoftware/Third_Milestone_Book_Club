@@ -3,20 +3,43 @@
 
     <h3 class="purple-text text-darken-4 center-align">Add Book</h3>
 
-    <div class="row">
+    <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="">
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-circle prefix purple-text text-darken-4"></i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">First Name</label>
-                </div>
-                <div class="input-field col s12">
-                    <i class="fas fa-phone prefix purple-text text-darken-4"></i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">Telephone</label>
+                    <i class="fas fa-pencil-alt prefix purple-text text-darken-4"></i>
+                    <input id="book_name" name="book_name" minlength="3" maxlength="32" 
+                        type="text" class="validate" required>
+                    <label for="book_name">Book Name</label>
                 </div>
             </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix purple-text text-darken-4"></i>
+                    <textarea id="book_description" name="book_description" minlength="1"
+                        maxlength="500" class="materialize-textarea validate" required></textarea>
+                    <label for="book_description">Book Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix purple-text text-darken-4"></i>
+                    <input id="date_purchased" name="date_purchased" type="text" class="datepicker validate" required>
+                    <label for="date_purchased">Date Purchased</label>
+                </div>
+            </div>
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+                        <i class="fas fa-book-open prefix purple-text text-darken-4"></i>
+						<label for="currently_reading">
+                            <input type="checkbox" id="currently_reading" name="currently_reading">
+                            <span class="lever"></span>
+                            Currently Reading
+                        </label>
+					</div>
+				</div>
+			</div>
         </form>
     </div>
 
