@@ -119,7 +119,7 @@ def add_book():
 
 
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
-def edit_book(book_id): 
+def edit_book(book_id):
     if request.method == "POST":
         currently_reading = "on" if request.form.get("currently_reading") else "off"
         submit = {
@@ -143,6 +143,12 @@ def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     flash("Book Removed")
     return redirect(url_for("get_books"))
+
+
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
 
 
 if __name__ == "__main__":
