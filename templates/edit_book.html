@@ -10,9 +10,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix purple-text text-darken-4"></i>
                     <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
+                        <option value="" disabled>Choose Category</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% if category.category_name == book.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="category_name">Book Category</label>
@@ -22,8 +26,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix purple-text text-darken-4"></i>
-                    <input id="book_name" name="book_name" minlength="3" maxlength="32" 
-                        type="text" class="validate" required>
+                    <input id="book_name" name="book_name" minlength="3" maxlength="32"
+                        value="{{ book.book_name }}" type="text" class="validate" required>
                     <label for="book_name">Book Name</label>
                 </div>
             </div>
@@ -32,7 +36,9 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix purple-text text-darken-4"></i>
                     <textarea id="book_description" name="book_description" minlength="1"
-                        maxlength="500" class="materialize-textarea validate" required></textarea>
+                        maxlength="500" class="materialize-textarea validate" required>
+                        {{- book.book_description -}}
+                    </textarea>
                     <label for="book_description">Book Description</label>
                 </div>
             </div>
@@ -40,7 +46,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix purple-text text-darken-4"></i>
-                    <input id="date_purchased" name="date_purchased" type="text" class="datepicker validate" required>
+                    <input id="date_purchased" name="date_purchased" type="text"
+                        value="{{ book.date_purchased }}" class="datepicker validate" required>
                     <label for="date_purchased">Date Purchased</label>
                 </div>
             </div>
@@ -50,7 +57,11 @@
 					<div class="switch">
                         <i class="fas fa-book-open prefix purple-text text-darken-4"></i>
 						<label for="currently_reading">
-                            <input type="checkbox" id="currently_reading" name="currently_reading">
+                            {% if book.currently_reading == "on" %}
+                                <input type="checkbox" id="currently_reading" name="currently_reading" checked>
+                            {% else %}
+                                <input type="checkbox" id="currently_reading" name="currently_reading">
+                            {% endif %}
                             <span class="lever"></span>
                             Currently Reading
                         </label>
@@ -60,6 +71,10 @@
             <!-- Edit Book Submit Button -->
             <div class="row">
                 <div class="col s12 center-align">
+                    <!-- Cancel Edit Button -->
+                    <a href="{{ url_for('get_books') }}" class="btn-large red text-shadow">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
                     <button type="submit" class="btn-large purple darken-1 text-shadow">
                         Edit Book <i class="fas fa-edit right"></i>
                     </button>
