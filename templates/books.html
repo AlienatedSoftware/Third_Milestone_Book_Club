@@ -16,9 +16,9 @@
                 </div>
                 <div class="col s9">
                     <strong>{{ book.book_name }}</strong> : {{ book.date_purchased }}
-                    {% if book.currently_reading == "on" %}
+                    {% if book.would_read_again == "on" %}
                         <i class="fas fa-book-open purple-text text-lighten-2 tooltipped"
-                            data-position="right" data-tooltip="READING!"></i>
+                            data-position="right" data-tooltip="Would read again!"></i>
                     {% endif %}
                 </div>
             </div>

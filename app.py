@@ -101,14 +101,14 @@ def logout():
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
     if request.method == "POST":
-        currently_reading = "on" if request.form.get("currently_reading") else "off"
+        would_read_again = "on" if request.form.get("would_read_again") else "off"
         book = {
             "category_name": request.form.get("category_name"),
             "book_name": request.form.get("book_name"),
             "book_description": request.form.get("book_description"),
-            "currently_reading": currently_reading,
             "date_purchased": request.form.get("date_purchased"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "would_read_again": would_read_again
         }
         mongo.db.books.insert_one(book)
         flash("Book Successfully Added")
@@ -121,14 +121,14 @@ def add_book():
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
     if request.method == "POST":
-        currently_reading = "on" if request.form.get("currently_reading") else "off"
+        would_read_again = "on" if request.form.get("would_read_again") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
             "book_name": request.form.get("book_name"),
             "book_description": request.form.get("book_description"),
-            "currently_reading": currently_reading,
             "date_purchased": request.form.get("date_purchased"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "would_read_again": would_read_again
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
         flash("Your Book Has Been Updated")

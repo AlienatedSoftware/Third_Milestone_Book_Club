@@ -51,19 +51,19 @@
                     <label for="date_purchased">Date Purchased</label>
                 </div>
             </div>
-            <!-- Currently Reading Toggle Switch -->
+            <!-- Would Read Again Toggle Switch -->
             <div class="row">
 				<div class="input-field col s12">
 					<div class="switch">
                         <i class="fas fa-book-open prefix purple-text text-darken-4"></i>
-						<label for="currently_reading">
-                            {% if book.currently_reading == "on" %}
-                                <input type="checkbox" id="currently_reading" name="currently_reading" checked>
+						<label for="would_read_again">
+                            {% if book.would_read_again == "on" %}
+                                <input type="checkbox" id="would_read_again" name="would_read_again" checked>
                             {% else %}
-                                <input type="checkbox" id="currently_reading" name="currently_reading">
+                                <input type="checkbox" id="would_read_again" name="would_read_again">
                             {% endif %}
                             <span class="lever"></span>
-                            Currently Reading
+                            Would read again!
                         </label>
 					</div>
 				</div>
