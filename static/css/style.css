@@ -1,3 +1,7 @@
+body {
+    width: 100%;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -13,4 +17,44 @@
 .collapsible-header .col strong {
     margin: 5px;
     line-height: 42px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.img-container {
+    background-image: url(../images/bookclub.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 5%;
+}
+
+.inner-container {
+    text-align: center;
+    background-size: cover;
+    width: 100%;
+    color: white;
+    height: auto;
+    padding-top: 200px;
+}
+
+.btn {
+    margin-bottom: 25%;
+}
+
+@media only screen and (max-width: 920px) {
+    .inner-container {
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .inner-container {
+        margin-top: 150px;
+    }
 }

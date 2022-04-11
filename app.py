@@ -108,7 +108,8 @@ def add_book():
             "book_description": request.form.get("book_description"),
             "date_purchased": request.form.get("date_purchased"),
             "created_by": session["user"],
-            "would_read_again": would_read_again
+            "would_read_again": would_read_again,
+            "users_thoughts": request.form.get("users_thoughts")
         }
         mongo.db.books.insert_one(book)
         flash("Book Successfully Added")
@@ -128,7 +129,8 @@ def edit_book(book_id):
             "book_description": request.form.get("book_description"),
             "date_purchased": request.form.get("date_purchased"),
             "created_by": session["user"],
-            "would_read_again": would_read_again
+            "would_read_again": would_read_again,
+            "users_thoughts": request.form.get("users_thoughts")
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
         flash("Your Book Has Been Updated")

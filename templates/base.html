@@ -16,27 +16,29 @@
 
     <header>
         <!-- Navbar -->
-        <nav class="nav-extended text-shadow purple darken-1">
-            <div class="nav-wrapper">
-                <a href="{{ url_for('get_books') }}" class="brand-logo">Book Club</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_books') }}">Home</a></li>
-                    {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="{{ url_for('add_book') }}">Share Book</a></li>
-                        {% if session.user|lower == "admin"|lower %}
-                            <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+        <div class="navbar-fixed">
+            <nav class="nav-extended text-shadow purple darken-1">
+                <div class="nav-wrapper">
+                    <a href="{{ url_for('get_books') }}" class="brand-logo">Book Club</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('get_books') }}">Home</a></li>
+                        {% if session.user %}
+                            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                            <li><a href="{{ url_for('add_book') }}">Share Book</a></li>
+                            {% if session.user|lower == "admin"|lower %}
+                                <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+                            {% endif %}
+                            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('login') }}">Log In</a></li>
+                            <li><a href="{{ url_for('register') }}">Register</a></li>
                         {% endif %}
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('login') }}">Log In</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-          
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
         <!-- Mobile navbar -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align purple-text text-darken 4">Book Club</h4></li>
@@ -69,8 +71,17 @@
     </section>
 
     <main class="container">
-        {% block content %}
-        {% endblock %}
+        <!-- Hero Image -->
+        <div>
+            {% block hero %}
+            {% endblock %}
+        </div>
+
+        <!-- This block element will display the contents from books.html -->
+        <div id="bookclub">
+            {% block content %}
+            {% endblock %}
+        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
