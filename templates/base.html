@@ -78,6 +78,21 @@
                 <h1>Welcome to the book club! </h1>
                 <p style="margin-right: 14px;margin-left: 14px;">Here we can openly share what books we are reading, and how we feel about them so that others alike, may take interests in pursuing
                     the same books you are.</p>
+                <form action="{{ url_for('search') }}" method="post" class="center-align">
+                    <div class="row valign-wrapper center-align search-bar">
+                        <div class="input-field">
+                            <i class="fas fa-search prefix white-text text-darken-4"></i>
+                            <input type="text" name="query" id="query" minlength="3" class="validate white-text" required>
+                            <label for="query">Search Books</label>
+                        </div>
+                        <div>
+                            <a href="{{ url_for('get_books') }}" class="red btn text-shadow">Reset</a>
+                            <button type="submit" class="purple darken-1 btn text-shadow">
+                                <i class="fas fa-search left"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
 
