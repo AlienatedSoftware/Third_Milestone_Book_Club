@@ -3,6 +3,7 @@
 
 <h3 class="purple-text text-darken-4 center-align">Book Club's Recommendations</h3>
 
+    {% if books|length > 0 %}
     <ul class="collapsible">
         {% for book in books %}
         <li>
@@ -31,5 +32,8 @@
         </li>
         {% endfor %}
     </ul>
+    {% else %}
+        <h3 class="red-text text-darken-4 center-align">No results found! Try another search</h3>
+    {% endif %}
 
 {% endblock %}
