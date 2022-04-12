@@ -44,6 +44,7 @@ It has a clean, simplistic and minimal design to not make the screen too distrac
 9. I want the abilty to view my profile.
 10. There should be options to register and login on the site navigation.
 11. If im logged in i should see navigation options to log out, and view my profile.
+12. If I encounter an error in rendering a page, I want to know what type of error it is, so I can research on how to solve the problems on my end.
 
 #### Admin Exlusive stories
 
@@ -103,6 +104,9 @@ Website acts as a fully functional CRUD system. Create, Read, Update, Delete. (U
 
 - **Search Engine** <br>
 Users will be able to limit what they see with the newly implemented search engine, for example "fantasy" will search for all fantasy book reviews.
+
+- **Error routes** <br>
+Users will be greeted with either 400, 404 or 500 errors if they were to encounter any.
 ***
 
 ## Technologies Used

@@ -33,6 +33,9 @@
 - "If im logged in i should see navigation options to log out, and view my profile."
     - As a logged in user, upon logging in, there is a log out button displayed. Along side a profile button which will take me to view my profile. Clicking the log out button successfully logs me out of the website.
 
+- "If I encounter an error in rendering a page, I want to know what type of error it is, so I can research on how to solve the problems on my end."
+    - As a user, that is on purposely entering my own links or spelling them wrong. I am greeted with a customised error page which displays what error it was, and a button to take me back to the home page thanks to the routes in app.py . In this example, I typed /indexx to recieve a 404 error.
+
 - **Admin** "I want to be able to manage the categories' database with ease, using only the website."
     - As an admin, I am able to see the manage categories button on the navbar, and I can add, edit or delete categories for users to assign their books to.
 
