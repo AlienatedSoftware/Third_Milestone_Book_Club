@@ -24,6 +24,10 @@ def get_books():
     books = list(mongo.db.books.find())
     return render_template("books.html", books=books)
 
+@app.route('/about')
+def about():
+    # function to display about page with detail on project and relevant disclaimer
+    return render_template('about.html', title='About')
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

@@ -54,3 +54,8 @@ html {
     align-items: center;
     font-size: large;
 }
+
+.about-content{
+    font-size: 1rem;
+    font-weight: bold;
+}
