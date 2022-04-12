@@ -199,6 +199,12 @@ def delete_category(category_id):
     flash("Category Has Been Removed")
     return redirect(url_for("get_categories"))
 
+@app.errorhandler(404)
+def page_not_found(e):
+    #Route for handling 404 errors
+
+    return render_template('404.html', title='Page not found!')
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
