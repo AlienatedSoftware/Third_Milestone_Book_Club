@@ -23,15 +23,17 @@ html {
     scroll-behavior: smooth;
 }
 
-
 .img-container {
-    background-image: url(../images/bookclub.jpg);
-    height: 100%;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(../images/bookclub.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 5%;
+    border-radius: 30px;
 }
 
 .inner-container {
@@ -40,11 +42,7 @@ html {
     width: 100%;
     color: white;
     height: auto;
-    padding-top: 200px;
-}
-
-.btn {
-    margin-bottom: 25%;
+    margin-bottom: 2%;
 }
 
 @media only screen and (max-width: 920px) {
