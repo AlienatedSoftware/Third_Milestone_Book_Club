@@ -5,44 +5,15 @@
 ![Mockup](media/responsive.PNG "Mockup")
 
 https://flask-book-club-project.herokuapp.com/
-
-## IMPORTANT
-
-To check with admin unique controls of controlling book categories, you must login as a admin.
-
-User: admin
-Password: Admin
-
-Ensure that the password has the capital 'A'
-
-## Table of Contents
-
-1. [Introduction](#Introduction)
-2. [UX](#UX)
-    1. [Ideal User Demographic](#Ideal-User-Demographic)
-    2. [User Stories](#User-Stories)
-    3. [Development Planes](#Development-Planes)
-    4. [Design](#Design)
-3. [Features](#Features)
-4. [Technologies Used](#Technologies-Used)
-     1. [Programs Used](#Programs-Used)
-     2. [Frameworks & Tools Used](#Frameworks-and-Tools-Used)
-5. [Testing](#Testing)
-6. [Deployment](#Deployment)
-7. [Acknowledgements](#Acknowledgements)
 ***
 
 ## Introduction
 
 Book Club -  Backend Development - Code Institute
 
-The goal of Book Club is to welcome all book worms alike to join together as a little community to share our books together, and recommend others to read what you love!
+The goal of Book Club is to welcome all book worms alike to join together as a little community to share our books together, and our thoughts/reviews on the books that might interest others to check out the adventures they've missed out on!
 
-Book Club was created with witty indivuals in mind, who like to socialise and is not afraid of sharing ideas. Most of these users will be mobile users on the go, in a book store or on a train! However this website is highly optimised for desktop users too.
-
-This project follows a CRUD (Create, Read, Update and Delete) system.
-
-It has a clean, simplistic and minimal design to not make the screen too distracting, so the users will be greeted with book titles, and an easy to use navigation system.
+Book Club was created with book worms in mind, who like to socialise and is not afraid of sharing ideas. Most of these users will be in a book store, outside and/or in lockdown! This website is designed to be a place that can be accessed from anywhere.
 
 This is my third of four Milestone Porjects that I must complete during the Full Stack Development Program over at Code Institute.
 The primarily requirements for this milestone is to make a backend development website with the use of **HTML, CSS, JavaScript, Python+Flask, MongoDB**.
@@ -50,63 +21,37 @@ The primarily requirements for this milestone is to make a backend development w
 
 ## UX
 
-### Main Objectives
+This project follows a CRUD (Create, Read, Update and Delete) system with a search function to narrow the reviews down by certain titles or just genres.
 
-- Allow users to choose create, read, update and delete posts. Project must meet a CRUD system.
-- Simplistic and easy navigation.
-- To create an virtual book club that is responsive to handheld devices.
+It has a clean, simplistic and minimal design to not make the screen too distracting, so the users will be greeted with book titles, and an easy to use navigation system.
 
-### Ideal User Demographic
+### User Goals
 
-The ideal users of this website are:
-
-- Students
-- Adults
-- Eldery
+1. To view other users book reviews.
+2. To create an account on the site.
+3. To add a review of their own and edit any existing ones they have.
 
 ### User Stories
 
-The ideal user of this application would be someone who absolutely loves to read books, but doesn't have access to a local book club to interact or share with others about what they enjoy to read. This project aims to satsify those users who miss out on book clubs and to be welcomed to a virtual one.
+1. I want to see book review summaries when I go to the home page of the site.
+2. The full book review should show the original user who created the post.
+3. The full book review should show what category/genre the book has been assigned to.
+4. The full book review should show the book name, genre, synopsis, users review, a 'would read again' icon (if users really liked the book) and the user who posted it.
+5. I would like to be able to register an account so I can create my own reviews.
+6. I would like to be able to log in without issues when I use the correct log in details.
+7. I should not be able to edit or delete a review that is not mine.
+8. On the book review page, I want to be able to delete or edit my reviews.
+9. I want the abilty to view my profile.
+10. There should be options to register and login on the site navigation.
+11. If im logged in i should see navigation options to log out, and view my profile.
 
-#### Students
+#### Admin Exlusive stories
 
-1. As a Student, I want to explore the enjoyment of the minds of writers and exploring a new world of stories.
-2. As a Student, I want a great introduction to books by getting recommendations from a mature audience.
-
-#### Adults
-
-1. As an Adult, I want to expand my collection on my bookshelf.
-2. As an Adult, I want to seek out new chapters in life and seek inspiration.
-
-#### Eldery
-
-1. As an Eldery, I want to share with the world all the books I love to talk about with friends.
-2. As an Eldery, I want to be able to explore the new generations of world building through books.
+1. I want to be able to manage the categories' database with ease, using only the website.
 
 ### Development Planes
 
 In order to create an engaging website, the developer used their own passion for books to help create a simplistic, and fast design for a virtual book club.
-
-#### Strategy
-This website will be focused on the following target audiences:
-- **Roles:**
-     - Students
-     - Adults
-     - Eldery
-
-- **Demographic:**
-     - 13 - 70+ year olds
-     - Students - Eldery
-     - Book Community
-
-- **Psychographics:**
-     - Personality & Attitudes:
-          - Youthful
-          - Adventureous
-     - Lifestyles:
-          - Modern
-          - Geeky
-          - Bookworm
 
 #### Home Wireframe
 ![home](media/Home.PNG)
@@ -122,45 +67,42 @@ This website will be focused on the following target audiences:
 
 ###  Design
 
-#### Colour Scheme
+The whole UI is made utilizing frameworks using Flask, PyMongo, Jijna and Materialize.
+Offical documents are listed below.
 
-The main colours used throughout the website are a mixture of Purple and White, with some red for buttons. All used with Materialize default colours for simplistic and slick design.
-
-#### Imagery
-
-The logos are all from [Font Awesome](https://fontawesome.com/).
+- [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+- [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+- [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+- [Materialize](https://materializecss.com/)
 ***
 
-## Features
+## MVP
 
-### CRUD System
+✅ Fully responsive.<br>
+✅ Check out book reviews/thoughts by other users.<br>
+✅ Register a new account and login.<br>
+✅ Share a book review.<br>
+✅ Staff users can edit categories/genres.<br>
 
-- Allows users the ability to Create, Read, Update and Delete posts from within the database.
+### Existing Features
 
-### Navigation Bar
+- **New Account** <br>
+To access the page the user must use their credentials to register. In the case of this build there is also an option to login as a "admin" which allows the user experience the application utilizing a premade account. (refer to testing section).
 
-- Clickable which will always take you to the home page. Responsive for mobile design that turns into a side navbar.
+- **Profile** <br>
+Shows your account information such as your username, and a button that takes you write up your own review.
 
-### Home
+- **Book Category** <br>
+Books are divided into different categories. 
 
-- Home screen consists of the shared books that has been recommended by users of the project.
+- **Reviews** <br>
+Users can share their thoughts/reviews on the books they've read. 
 
-### Login + Register Screens
+- **CRUD** <br>
+Website acts as a fully functional CRUD system. Create, Read, Update, Delete. (Users may only apply updates and deletes to their own posts.)
 
-- Responsive pages of forms to create/login to your personal accounts which will be held as data in the database.
-
-### Share Book
-
-- Responsive page of a forms to share a book that you like with the rest of the users/community.
-
-### Manage Categories
-
-- An admin only page to manage, edit or delete new categories for users to share books for.
-
-### Features to Implement in the future
-
-- A built-in feature to prevent security breaches to allow any user to access admin only content.
-- A more fluid responsive design for smaller devices with buttons.
+- **Search Engine** <br>
+Users will be able to limit what they see with the newly implemented search engine, for example "fantasy" will search for all fantasy book reviews.
 ***
 
 ## Technologies Used
@@ -196,8 +138,21 @@ Based on the User Stories above, all users will be able to follow the flow of th
 
 Google developer tools was used manually to check and test the live project on all different screen sizes. Used multiple devices and feedback from family & friends who went to the deployed site on their devices.
 
+Refer to the tests.md attached to this repo for detailed tests.
 
-### UX Test for both Mobile & Desktop
+### Test Account
+
+For testing purposes, there is already a premade user + admin account to experiment with. Feel free to create your own accounts too!
+
+#### Admin
+- User = admin
+- Password = Admin
+
+#### Test User
+- User = tester
+- Password = itestthings
+
+### UX Test for both Mobile & Desktop (Little outdated, but still valid)
 
 [Mobile](https://youtu.be/67SZCd8ntxQ)
 
