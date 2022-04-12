@@ -199,11 +199,26 @@ def delete_category(category_id):
     flash("Category Has Been Removed")
     return redirect(url_for("get_categories"))
 
+
+@app.errorhandler(400)
+def bad_request(e):
+    # Route for handling 400 errors
+
+    return render_template('400.html', title='Opps Something is wrong!')
+
+
 @app.errorhandler(404)
 def page_not_found(e):
-    #Route for handling 404 errors
+    # Route for handling 404 errors
 
     return render_template('404.html', title='Page not found!')
+
+
+@app.errorhandler(500)
+def server_error(e):
+    # Route for handling 500 errors
+
+    return render_template('500.html', title='Opps Something is wrong!')
 
 
 if __name__ == "__main__":
