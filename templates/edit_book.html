@@ -48,7 +48,16 @@
                     <i class="fas fa-calendar-alt prefix purple-text text-darken-4"></i>
                     <input id="date_purchased" name="date_purchased" type="text"
                         value="{{ book.date_purchased }}" class="datepicker validate" required>
-                    <label for="date_purchased">Date Purchased</label>
+                    <label for="date_purchased">Date Read</label>
+                </div>
+            </div>
+            <!-- User Review -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-comment-dots prefix purple-text text-darken-4"></i>
+                    <textarea id="users_thoughts" name="users_thoughts" minlength="1"
+                        maxlength="500" class="materialize-textarea validate" required></textarea>
+                    <label for="users_thoughts">Write your review!</label>
                 </div>
             </div>
             <!-- Would Read Again Toggle Switch -->
